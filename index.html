@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="Portfolio of Banda Tarun Kumar" />
+  <title>Banda Tarun Kumar • Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;          /* dark slate */
+      --panel:#111a2e;       /* card bg */
+      --text:#e5e7eb;        /* light text */
+      --muted:#97a3b6;       /* muted text */
+      --brand:#60a5fa;       /* primary */
+      --brand-2:#a78bfa;     /* accent */
+      --ring: rgba(96,165,250,.45);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 100% -10%, rgba(167,139,250,.18), transparent 40%),
+                  radial-gradient(1000px 700px at -10% 10%, rgba(96,165,250,.18), transparent 40%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+
+    /* NAV */
+    nav{
+      position:sticky; top:0; backdrop-filter:saturate(160%) blur(10px);
+      background:rgba(11,18,32,.6); border-bottom:1px solid rgba(255,255,255,.1);
+      z-index:100;
+    }
+    nav .container{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:16px 24px;
+    }
+    .logo{font-weight:800; font-size:1.5rem; color:var(--brand)}
+    nav ul{display:flex; gap:32px; list-style:none; margin:0; padding:0}
+    nav a{color:var(--text); font-weight:500; transition:color .2s}
+    nav a:hover{color:var(--brand)}
+
+    /* HERO */
+    .hero{
+      min-height:100vh; display:flex; align-items:center; text-align:center;
+      padding:120px 0 80px;
+    }
+    .hero h1{
+      font-size:4rem; font-weight:800; margin:0 0 24px;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .hero p{
+      font-size:1.25rem; color:var(--muted); max-width:600px; margin:0 auto 40px;
+    }
+    .cta{
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--brand); color:white; padding:16px 32px;
+      border-radius:var(--radius); font-weight:600; font-size:1.1rem;
+      transition:all .2s; border:none; cursor:pointer;
+    }
+    .cta:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+
+         /* SECTIONS */
+     section{margin:80px 0}
+     section h2{
+       font-size:2.5rem; font-weight:800; margin:0 0 48px; text-align:center;
+       background:linear-gradient(135deg, var(--brand), var(--brand-2));
+       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+       background-clip:text;
+     }
+
+     /* Default section background */
+     section {
+       min-height: 100vh;   /* full screen height */
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       padding: 24px;
+       transition: background 0.6s ease-in-out;
+       border-radius: 18px;
+       margin-bottom: 24px;
+     }
+
+     /* Different background gradients for each section */
+     #about {
+       background: linear-gradient(135deg, #1e293b, #0f172a);
+     }
+     #skills {
+       background: linear-gradient(135deg, #1e3a8a, #0f172a);
+     }
+     #projects {
+       background: linear-gradient(135deg, #047857, #0f172a);
+     }
+     #contact {
+       background: linear-gradient(135deg, #7e22ce, #0f172a);
+     }
+
+         /* ABOUT */
+     .about-grid{
+       display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+     }
+                             .profile-pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .profile-pic img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;   /* keeps the face centered */
+        border-radius: 50%;  /* makes it a perfect circle */
+        border: 5px solid var(--brand);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+      }
+
+      .profile-pic img:hover {
+        transform: scale(1.08);
+      }
+     .about-text p{font-size:1.1rem; color:var(--muted); margin-bottom:24px}
+     .about-text p:last-child{margin-bottom:0}
+
+    /* SKILLS */
+    .skills-grid{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:24px; margin-top:48px;
+    }
+    .skill-card{
+      background:var(--panel); padding:24px; border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.1); text-align:center;
+      transition:all .2s;
+    }
+    .skill-card:hover{
+      transform:translateY(-4px); border-color:var(--brand);
+      box-shadow:var(--shadow);
+    }
+    .skill-card h3{color:var(--brand); margin:0 0 12px; font-size:1.1rem}
+    .skill-card p{color:var(--muted); margin:0; font-size:0.9rem}
+
+    /* PROJECTS */
+    .projects-grid{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+      gap:32px; margin-top:48px;
+    }
+    .project-card{
+      background:var(--panel); border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.1); overflow:hidden;
+      transition:all .2s;
+    }
+    .project-card:hover{
+      transform:translateY(-4px); border-color:var(--brand);
+      box-shadow:var(--shadow);
+    }
+    .project-image{
+      height:200px; background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      display:flex; align-items:center; justify-content:center;
+      color:white; font-size:3rem;
+    }
+    .project-content{padding:24px}
+    .project-content h3{color:var(--text); margin:0 0 12px; font-size:1.25rem}
+    .project-content p{color:var(--muted); margin:0 0 20px; line-height:1.6}
+    .project-links{display:flex; gap:16px}
+    .project-links a{
+      padding:8px 16px; border:1px solid var(--brand); border-radius:8px;
+      font-size:0.9rem; transition:all .2s;
+    }
+    .project-links a:hover{background:var(--brand); color:white}
+
+    /* CONTACT */
+    .contact-form{
+      max-width:600px; margin:0 auto; background:var(--panel);
+      padding:48px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.1);
+    }
+    .form-group{margin-bottom:24px}
+    .form-group label{display:block; margin-bottom:8px; color:var(--text); font-weight:600}
+    .form-group input, .form-group textarea{
+      width:100%; padding:16px; background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1); border-radius:8px;
+      color:var(--text); font-size:1rem; transition:border-color .2s;
+    }
+    .form-group input:focus, .form-group textarea:focus{
+      outline:none; border-color:var(--brand);
+    }
+    .form-group textarea{resize:vertical; min-height:120px}
+
+    /* FOOTER */
+    footer{
+      text-align:center; padding:48px 0; border-top:1px solid rgba(255,255,255,.1);
+      color:var(--muted); margin-top:80px;
+    }
+
+         /* RESPONSIVE */
+     @media (max-width:768px){
+       nav ul{gap:16px}
+       .hero h1{font-size:2.5rem}
+       .about-grid{grid-template-columns:1fr; gap:32px}
+                               .profile-pic img{width:180px; height:180px}
+       .projects-grid{grid-template-columns:1fr}
+       .contact-form{padding:32px 24px}
+     }
+
+     /* Animated background circles */
+     .bg-animation {
+       position: fixed;
+       top: 0; left: 0;
+       width: 100%; height: 100%;
+       overflow: hidden;
+       z-index: -1;
+     }
+
+     .bg-animation span {
+       position: absolute;
+       display: block;
+       width: 40px; height: 40px;
+       background: rgba(96,165,250,0.25);
+       border-radius: 50%;
+       animation: move 25s linear infinite;
+       bottom: -150px;
+     }
+
+     .bg-animation span:nth-child(1) {
+       left: 25%;
+       width: 80px; height: 80px;
+       animation-delay: 0s;
+     }
+     .bg-animation span:nth-child(2) {
+       left: 10%;
+       width: 50px; height: 50px;
+       animation-delay: 2s;
+       animation-duration: 12s;
+     }
+     .bg-animation span:nth-child(3) {
+       left: 70%;
+       width: 100px; height: 100px;
+       animation-delay: 4s;
+     }
+     .bg-animation span:nth-child(4) {
+       left: 40%;
+       width: 60px; height: 60px;
+       animation-delay: 0s;
+       animation-duration: 18s;
+     }
+     .bg-animation span:nth-child(5) {
+       left: 65%;
+       width: 20px; height: 20px;
+       animation-delay: 0s;
+     }
+     .bg-animation span:nth-child(6) {
+       left: 85%;
+       width: 120px; height: 120px;
+       animation-delay: 3s;
+       animation-duration: 20s;
+     }
+
+     @keyframes move {
+       0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+       100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+     }
+  </style>
+</head>
+<body>
+  <!-- Animated Background Circles -->
+  <div class="bg-animation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav>
+    <div class="container">
+      <div class="logo">BTK</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Banda Tarun Kumar</h1>
+        <p>Full Stack Developer crafting digital experiences with modern technologies and creative solutions</p>
+        <button class="cta">View My Work</button>
+      </div>
+    </section>
+
+                   <section id="about">
+        <div class="container">
+          <h2>About Me</h2>
+          
+          <!-- Profile Image -->
+          <div class="profile-pic">
+            <img src="WhatsApp Image 2025-08-24 at 21.25.12.jpeg" alt="Banda Tarun Kumar">
+          </div>
+
+          <p>
+            Hello! I'm <b>Banda Tarun Kumar</b>, passionate about technology and innovation. 
+            This portfolio highlights my skills, projects, and career journey. 
+          </p>
+        </div>
+      </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <p>React, Vue.js, HTML5, CSS3, JavaScript, TypeScript</p>
+          </div>
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <p>Node.js, Python, Express.js, Django, REST APIs</p>
+          </div>
+          <div class="skill-card">
+            <h3>Database</h3>
+            <p>MongoDB, PostgreSQL, MySQL, Redis</p>
+          </div>
+          <div class="skill-card">
+            <h3>DevOps</h3>
+            <p>Docker, AWS, Git, CI/CD, Linux</p>
+          </div>
+          <div class="skill-card">
+            <h3>Tools</h3>
+            <p>VS Code, Figma, Postman, Jira, Slack</p>
+          </div>
+          <div class="skill-card">
+            <h3>Other</h3>
+            <p>GraphQL, WebSockets, PWA, Testing, Agile</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">🚀</div>
+            <div class="project-content">
+              <h3>E-Commerce Platform</h3>
+              <p>A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, product management, and payment integration.</p>
+              <div class="project-links">
+                <a href="#" target="_blank">Live Demo</a>
+                <a href="#" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">📱</div>
+            <div class="project-content">
+              <h3>Task Management App</h3>
+              <p>A collaborative task management application with real-time updates, built using Vue.js and WebSockets. Includes team collaboration features.</p>
+              <div class="project-links">
+                <a href="#" target="_blank">Live Demo</a>
+                <a href="#" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">🌐</div>
+            <div class="project-content">
+              <h3>Portfolio Website</h3>
+              <p>This responsive portfolio website built with modern HTML, CSS, and JavaScript. Features a dark theme with smooth animations and responsive design.</p>
+              <div class="project-links">
+                <a href="#" target="_blank">Live Demo</a>
+                <a href="#" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Get In Touch</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="cta">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Banda Tarun Kumar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form submission handling
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Add your form submission logic here
+      alert('Thank you for your message! I\'ll get back to you soon.');
+    });
+
+    // CTA button scroll to projects
+    document.querySelector('.cta').addEventListener('click', function() {
+      document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
